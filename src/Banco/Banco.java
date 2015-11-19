@@ -18,7 +18,7 @@ public class Banco {
     public static void conecte(){
         String Driver = "org.postgresql.Driver";
         String user = "postgres";
-        String senha = "admin";
+        String senha = "adm123";
         String url = "jdbc:postgresql://localhost:5432/rank";
 
 
