@@ -61,7 +61,7 @@ public class Cenario {
                 MyPlayer.atirar(janela, cena, teclado, alien, control, MyPlayer);
                 janela.update();
                 alien.atacar(MyPlayer, cena, control);
-                if(MyPlayer.getPontoslimite() >= 50 && control.getDificuldade() > 50){
+                if(MyPlayer.getPontoslimite() >= 150 && control.getDificuldade() > 50){
                     control.setDificuldade(control.getDificuldade() - 30);
                     MyPlayer.setPontoslimite(0);
                 }

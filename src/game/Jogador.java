@@ -15,7 +15,7 @@ import jplay.Window;
 
 public class Jogador extends Sprite{
 
-    private double velocidade = 1;
+    private double velocidade = 1.5;
     private int direcao = 3;
     private Keyboard teclado;
     private boolean movendo = false;
