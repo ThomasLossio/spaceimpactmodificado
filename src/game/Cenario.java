@@ -71,11 +71,8 @@ public class Cenario {
                 
                 if (MyPlayer.verificarVida() && GameOver == false) {
                     LimparImgMenu();
-                    if(rank.CadastraPontos(MyPlayer.getNome(), MyPlayer.getPontos())){
-                        System.out.println("ok");
-                    } else {
-                        System.out.println("não");
-                    }                                             
+                    rank.CadastraPontos(MyPlayer.getNome(), MyPlayer.getPontos());
+            
                     GameOver = true;                    
                     pauseGame = true;
                     

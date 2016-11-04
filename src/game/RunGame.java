@@ -24,7 +24,7 @@ public class RunGame {
     private GameImage telaMenu; 
     private boolean exit = false; 
     private int op = 1; 
-    Font f = new Font("arial", Font.BOLD, 100); 
+    Font f = new Font("arial", Font.BOLD, 25); 
     Ranking rank = new Ranking();
     ArrayList<Ranking> lista = new ArrayList();    
     
@@ -48,10 +48,10 @@ public class RunGame {
                     telaMenu = new GameImage(URL.tile("Tela_MenuPrincipalJogar.png")); 
                 break;}
                 case 2:{
-                    telaMenu = new GameImage(URL.tile("Tela_Rankings.png")); 
+                    telaMenu = new GameImage(URL.tile("Tela_MenuPrincipalRanking.png")); 
                 break;}
                 case 3:{
-                    telaMenu = new GameImage(URL.tile("Tela_Informacoes.png"));
+                    telaMenu = new GameImage(URL.tile("Tela_MenuPrincipalInfo.png"));
                 break;}
                 case 4:{
                     telaMenu = new GameImage(URL.tile("Tela_MenuPrincipalExit.png")); 
@@ -104,17 +104,34 @@ public class RunGame {
                     break;}
                     
                     case 2:{ 
-                        System.out.println("Menu Ranking");
+                        telaMenu = new GameImage(URL.tile("Tela_Ranking.png")); 
+                        telaMenu.draw();
+                        janela.update();
+
                         lista = rank.listaRank();
-                        for(int i = 0; i < lista.size() && i < 10; i++){
-                            System.out.println(lista.get(i).getPos() + "- " + lista.get(i).getNome() + " " + lista.get(i).getPontos());
-                            this.janela.drawText(lista.get(i).getPos() + " - " + lista.get(i).getNome() + " " + lista.get(i).getPontos() + "\n", 50, 100, Color.white, f);
+                        for(int i = 0, pos = 200; i < lista.size() && i < 10; i++, pos = pos + 25){
+//                            System.out.println(lista.get(i).getPos() + "- " + lista.get(i).getNome() + " " + lista.get(i).getPontos());
+                            this.janela.drawText(lista.get(i).getPos() + " - " + lista.get(i).getNome() + " " + lista.get(i).getPontos(), 100, pos, Color.white, f);
+                        }
+                        janela.update();
+
+                        while(true){                            
+                            if (teclado.keyDown(KeyEvent.VK_ESCAPE)){
+                                break;
+                            }
                         }
                        
                     break;}
                     
                     case 3:{
-                        telaMenu = new GameImage(URL.tile("Tela_Informacoes"));
+                        telaMenu = new GameImage(URL.tile("Tela_Informacoes.png"));
+                        telaMenu.draw();
+                        janela.update();
+                        while(true){                            
+                            if (teclado.keyDown(KeyEvent.VK_ESCAPE)){
+                                break;
+                            }
+                        }
                         
                     break;}
                     case 4:{
