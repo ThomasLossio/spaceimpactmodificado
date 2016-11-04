@@ -48,7 +48,7 @@ public class RunGame {
                     telaMenu = new GameImage(URL.tile("Tela_MenuPrincipalJogar.png")); 
                 break;}
                 case 2:{
-                    telaMenu = new GameImage(URL.tile("Tela_MenuPrincipalRanking.png")); 
+                    telaMenu = new GameImage(URL.tile("Tela_Rankings.png")); 
                 break;}
                 case 3:{
                     telaMenu = new GameImage(URL.tile("Tela_Informacoes.png"));
@@ -108,9 +108,9 @@ public class RunGame {
                         lista = rank.listaRank();
                         for(int i = 0; i < lista.size() && i < 10; i++){
                             System.out.println(lista.get(i).getPos() + "- " + lista.get(i).getNome() + " " + lista.get(i).getPontos());
-                            
-                        } 
-                        janela.drawText(lista.get(0).getPos() + "- " + lista.get(0).getNome() + " " + lista.get(0).getPontos(), 50, 50, Color.white, f);
+                            this.janela.drawText(lista.get(i).getPos() + " - " + lista.get(i).getNome() + " " + lista.get(i).getPontos() + "\n", 50, 100, Color.white, f);
+                        }
+                       
                     break;}
                     
                     case 3:{
